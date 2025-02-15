@@ -1,5 +1,6 @@
 import Sobre from "./../screens/SobreScreen"
 import HomeScreen from "./../screens/HomeScreen"
+import APIScreen from "./../screens/APIScreen"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -11,6 +12,7 @@ export default function App() {
             <nav.Navigator>
                 <nav.Screen name="Home" component={HomeScreen}></nav.Screen>
                 <nav.Screen name="Sobre" component={Sobre}></nav.Screen>
+                <nav.Screen name="Detalhes" component={APIScreen}></nav.Screen>
             </nav.Navigator>
         </NavigationContainer>
     )
