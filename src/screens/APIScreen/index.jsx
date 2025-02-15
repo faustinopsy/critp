@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { styles } from './styles';
+import { getUsers } from '../../services/api';
 
 const APIScreen = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-        setLoading(false);
-      })
-      .catch((error) => console.error('Erro ao buscar usuários:', error));
+    const fetchData = async () => {
+      const data = await getUsers();
+      setUsers(data);
+      setLoading(false);
+    };
+
+    fetchData();
   }, []);
 
   return (
