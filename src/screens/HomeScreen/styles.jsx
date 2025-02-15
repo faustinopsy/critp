@@ -12,4 +12,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
+  linha:{
+    flexDirection:'row',
+
+  }
 });
